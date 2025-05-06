@@ -489,6 +489,115 @@
   
   /* 
   ======================
+    Education Section
+  ======================
+  */
+  #education {
+    padding: 5rem 0;
+    background: var(--light-color);
+  }
+  
+  .education-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .education-item {
+    background: #fff;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+  }
+  
+  .education-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .education-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+  }
+  
+  .edu-degree {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .edu-location, .edu-date, .edu-gpa {
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .edu-description {
+    margin-top: 1rem;
+  }
+  
+  /* 
+  ======================
+    Experience Section
+  ======================
+  */
+  #experience {
+    padding: 5rem 0;
+    background: #fff;
+  }
+  
+  .experience-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .experience-item {
+    padding: 2rem;
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 2rem;
+    background: #f9f9f9;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    box-shadow: var(--box-shadow);
+    position: relative;
+  }
+  
+  .experience-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .experience-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    left: -12px;
+    top: 2rem;
+  }
+  
+  .experience-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .exp-company {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .exp-date {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  
+  .exp-description {
+    line-height: 1.7;
+  }
+  
+  /* 
+  ======================
     Footer
   ======================
   */
