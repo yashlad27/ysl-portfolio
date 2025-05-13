@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectAnimations();
     initScrollSpy();
     initFormValidation();
+    initTypeEffect();
+    initScrollIndicator();
 });
 
 // Mobile navigation functionality
@@ -197,8 +199,33 @@ function initFormValidation() {
 }
 
 // Typing effect for hero section
-function typeEffect() {
+function initTypeEffect() {
     const element = document.querySelector('.typing-text');
+    
+    if (!element) {
+        // If no typing-text element exists, create one
+        const heroH2 = document.querySelector('#home h2');
+        if (heroH2) {
+            const originalText = heroH2.textContent;
+            heroH2.innerHTML = '<span class="typing-text"></span>';
+            const typingElement = heroH2.querySelector('.typing-text');
+            
+            let i = 0;
+            const speed = 100; // typing speed in milliseconds
+            
+            function type() {
+                if (i < originalText.length) {
+                    typingElement.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            // Start typing after a short delay
+            setTimeout(type, 1000);
+        }
+        return;
+    }
     if (element) {
         const text = element.innerHTML;
         element.innerHTML = '';
@@ -242,6 +269,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Add scroll indicator to hero section
+function initScrollIndicator() {
+    const header = document.querySelector('#home');
+    
+    if (header && !document.querySelector('.scroll-indicator')) {
+        const scrollIndicator = document.createElement('div');
+        scrollIndicator.className = 'scroll-indicator';
+        
+        // Create mouse icon
+        const mouse = document.createElement('div');
+        mouse.className = 'mouse';
+        
+        // Create text
+        const text = document.createElement('span');
+        text.textContent = 'Scroll Down';
+        text.style.marginTop = '10px';
+        text.style.fontSize = '12px';
+        text.style.color = 'white';
+        
+        // Append elements
+        scrollIndicator.appendChild(mouse);
+        scrollIndicator.appendChild(text);
+        
+        // Append to header
+        header.appendChild(scrollIndicator);
+        
+        // Make it disappear on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                gsap.to(scrollIndicator, { opacity: 0, duration: 0.3 });
+            } else {
+                gsap.to(scrollIndicator, { opacity: 0.7, duration: 0.3 });
+            }
+        });
+    }
+}
 
 // Dark mode toggle (optional feature)
 function initDarkMode() {

@@ -4,10 +4,11 @@
 ======================
 */
 :root {
-    --primary-color: #4a89dc;
-    --secondary-color: #5d9cec;
-    --dark-color: #292929;
-    --light-color: #f4f4f4;
+    --primary-color: #FF6B6B;
+    --secondary-color: #FF9E7A;
+    --accent-color: #B5EAD7;
+    --dark-color: #444444;
+    --light-color: #F8F9FA;
     --danger-color: #e74c3c;
     --success-color: #2ecc71;
     --max-width: 1200px;
